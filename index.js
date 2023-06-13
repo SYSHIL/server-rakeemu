@@ -23,11 +23,14 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Listen for POST requests containing JSON data
-expressapp.post('/updateSmoke/', async (req, res) => { 
+
+
+expressapp.get('/',(req,res)=>{
+  res.send("welcome")
+})
+
+expressapp.post('/updateSmoke', async (req, res) => { 
   const { id, smoke } = req.body;
-  // console.log(req.body)
-  // console.log(id,smoke)
-  // Update document in Firestore
   await setDoc(doc(db,'smokeSensors',id.toString()),{
     smokeValue : smoke
   });
