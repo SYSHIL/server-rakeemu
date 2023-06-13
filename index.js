@@ -23,7 +23,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Listen for POST requests containing JSON data
-expressapp.post('/', async (req, res) => {
+expressapp.post('/updateSmoke/', async (req, res) => { 
   const { id, smoke } = req.body;
   // console.log(req.body)
   // console.log(id,smoke)
@@ -33,6 +33,14 @@ expressapp.post('/', async (req, res) => {
   });
   res.send("success")
 });
+
+
+// another function to handle post request for temperature
+
+
+
+// antoher function to handle post for vcb tripping
+
 
 // Start server
 expressapp.listen(port, () => {
